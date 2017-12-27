@@ -75,3 +75,43 @@ print("test_set_y shape: " + str(test_set_y.shape))
 #
 # </table>
 #
+# In[35]:
+
+# Reshape the training and test examples
+
+### START CODE HERE ### (≈ 2 lines of code)
+train_set_x_flatten = train_set_x_orig.reshape(train_set_x_orig.shape[0], -1).T
+test_set_x_flatten = test_set_x_orig.reshape(test_set_x_orig.shape[0], -1).T
+### END CODE HERE ###
+
+print("train_set_x_flatten shape: " + str(train_set_x_flatten.shape))
+print("train_set_y shape: " + str(train_set_y.shape))
+print("test_set_x_flatten shape: " + str(test_set_x_flatten.shape))
+print("test_set_y shape: " + str(test_set_y.shape))
+print("sanity check after reshaping: " + str(train_set_x_flatten[0:5, 0]))
+
+# **Expected Output**:
+#
+# <table style="width:35%">
+#   <tr>
+#     <td>**train_set_x_flatten shape**</td>
+#     <td> (12288, 209)</td>
+#   </tr>
+#   <tr>
+#     <td>**train_set_y shape**</td>
+#     <td>(1, 209)</td>
+#   </tr>
+#   <tr>
+#     <td>**test_set_x_flatten shape**</td>
+#     <td>(12288, 50)</td>
+#   </tr>
+#   <tr>
+#     <td>**test_set_y shape**</td>
+#     <td>(1, 50)</td>
+#   </tr>
+#   <tr>
+#   <td>**sanity check after reshaping**</td>
+#   <td>[17 31 56 22 33]</td>
+#   </tr>
+# </table>
+
