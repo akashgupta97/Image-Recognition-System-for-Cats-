@@ -567,3 +567,46 @@ def model(X_train, Y_train, X_test, Y_test, num_iterations=2000, learning_rate=0
 
     return d
 
+# In[50]:
+
+d = model(train_set_x, train_set_y, test_set_x, test_set_y, num_iterations=2000, learning_rate=0.005, print_cost=True)
+
+# **Expected Output**:
+#
+# <table style="width:40%">
+#
+#     <tr>
+#         <td> **Train Accuracy**  </td>
+#         <td> 99.04306220095694 % </td>
+#     </tr>
+#
+#     <tr>
+#         <td>**Test Accuracy** </td>
+#         <td> 70.0 % </td>
+#     </tr>
+# </table>
+#
+#
+
+# Example of a picture that was wrongly classified.
+for index in range(20):
+    # index =
+    plt.imshow(test_set_x[:, index].reshape((num_px, num_px, 3)))
+    plt.imshow(test_set_x[:, index + 1].reshape((num_px, num_px, 3)))
+    print("y = " + str(test_set_y[0, index]) + ", you predicted that it is a \"" + classes[
+        d["Y_prediction_test"][0, index]].decode("utf-8") + "\" picture.")
+
+# Let's also plot the cost function and the gradients.
+
+# In[54]:
+
+# Plot learning curve (with costs)
+costs = np.squeeze(d['costs'])
+plt.plot(costs)
+plt.ylabel('cost')
+plt.xlabel('iterations (per hundreds)')
+plt.title("Learning rate =" + str(d["learning_rate"]))
+plt.show()
+
+# **Interpretation**:
+# You can see the cost decreasing. It shows that the parameters are being learned. However, you see that you could train the model even more on the training set. Try to increase the number of iterations in the cell above and rerun the cells. You might see that the training set accuracy goes up, but the test set accuracy goes down. This is called overfitting.
