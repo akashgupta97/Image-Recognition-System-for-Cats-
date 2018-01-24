@@ -652,13 +652,3 @@ print("y = " + str(np.squeeze(my_predicted_image)) + ", your algorithm predicts 
     int(np.squeeze(my_predicted_image)),].decode("utf-8") + "\" picture.")
 
 
-# <font color='blue'>
-# **What to remember from this assignment:**
-# 1. Preprocessing the dataset is important.
-# 2. You implemented each function separately: initialize(), propagate(), optimize(). Then you built a model().
-# 3. Tuning the learning rate (which is an example of a "hyperparameter") can make a big difference to the algorithm. You will see more examples of this later in this course!
-
-# Finally, if you'd like, we invite you to try different things on this Notebook. Make sure you submit before trying anything. Once you submit, things you can play with include:
-#     - Play with the learning rate and the number of iterations
-#     - Try different initialization methods and compare the results
-#     - Test other preprocessings (center the data, or divide each row by its standard deviation)
